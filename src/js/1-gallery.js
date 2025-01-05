@@ -1,5 +1,6 @@
 import SimpleLightbox from "simplelightbox";
 
+
 console.log(SimpleLightbox);
 
 const images = [
@@ -67,4 +68,24 @@ const images = [
     description: 'Lighthouse Coast Sea',
   },
 ];
+
+const createMarkup = arr => {
+  return arr.map(image => `<li class="gallery-item">
+	<a class="gallery-link" href="${image.original}">
+		<img 
+			class="gallery-image" 
+			src="${image.preview}" 
+			alt="${image.description}" 
+			/>
+	</a>
+</li>`).join('');
+}
+console.log(createMarkup(images));
+
+const galleryList = document.querySelector('.gallery');
+console.log(galleryList);
+
+galleryList.insertAdjacentHTML('afterbegin', createMarkup(images));
+
+new SimpleLightbox('.gallery a', { captionsData: 'alt', captionDelay: 250 });
 
