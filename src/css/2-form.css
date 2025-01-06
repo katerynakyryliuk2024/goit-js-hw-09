@@ -41,7 +41,7 @@
         letter-spacing: 0.04em;
         color: #2e2f42;
         width: 360px;
-        justify-content: flex-start;
+        align-items: flex-start;
 }
 
 .form-input{
