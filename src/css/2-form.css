@@ -33,7 +33,7 @@
 .form-label{
     display: flex;
     flex-direction: column;
-    margin-bottom: 8px;
+    gap: 8px;
     font-family: "Montserrat", sans-serif;
         font-weight: 400;
         font-size: 16px;
@@ -47,6 +47,7 @@
 .form-input{
 width: 359px;
 height: 39px;
+box-sizing: border-box;
 
 }
 
@@ -54,5 +55,6 @@ textarea {
     resize: none;
     width: 359px;
     height: 79px;
+    box-sizing: border-box;
 }
 
