@@ -3,6 +3,7 @@
     flex-direction: column;
     gap: 8px;
     max-width: 360px ;
+    padding-left: 100px;
 }
 .form-button{
     display: inline-flex;
@@ -32,7 +33,7 @@
 .form-label{
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    margin-bottom: 8px;
     font-family: "Montserrat", sans-serif;
         font-weight: 400;
         font-size: 16px;
@@ -48,3 +49,10 @@ width: 359px;
 height: 39px;
 
 }
+
+textarea {
+    resize: none;
+    width: 359px;
+    height: 79px;
+}
+
