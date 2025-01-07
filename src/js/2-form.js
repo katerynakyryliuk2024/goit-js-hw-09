@@ -50,6 +50,11 @@ feedbackForm.addEventListener('input', formFildChange);
      
      
      event.currentTarget.reset();
+
+    formData = {
+    email: "",
+    message: ""
+     }
      
      localStorage.removeItem('feedback-form-state');
 
