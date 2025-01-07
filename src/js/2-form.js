@@ -32,6 +32,7 @@ saveToLS('feedback-form-state', formData);
 const load = key => {
 try {
     const dataFromLS = localStorage.getItem(key);
+
     return dataFromLS === null ? undefined : JSON.parse(dataFromLS);
 } catch (err) {
     console.log(err);
@@ -39,10 +40,17 @@ try {
 
 }
 
-
 const getFormFromLS = () => {
    
     console.log(load('feedback-form-state'));
 }
 
 getFormFromLS();
+
+const feedbackForm.addEventListener ('submit', event => {
+    event.preventDefault();
+
+    if (feedbackForm.elements.email.value === '' || feedbackForm.elements.message.value === '') {
+        return alert('Fill please all fields');
+    }
+})
