@@ -13,9 +13,7 @@ feedbackForm.addEventListener('input', () => {
 
     console.log(formData);
 
-})
-
-const saveToLS = (key, data) => {
+    const saveToLS = (key, data) => {
 
 try {
     
@@ -28,6 +26,10 @@ try {
 }
 
 console.log(saveToLS('feedback-form-state', formData)); 
+
+})
+
+
 
 const load = key => {
 try {
@@ -45,7 +47,7 @@ const getFormFromLS = () => {
     console.log(load('feedback-form-state'));
 }
 
-console.log(getFormFromLS());
+getFormFromLS();
 
 
  feedbackForm.addEventListener ('submit', event => {
@@ -63,5 +65,8 @@ console.log(getFormFromLS());
     console.log(formData);
      } 
      
+     feedbackForm.reset();
+     localStorage.removeItem('feedback-form-state');
+
     
 })
