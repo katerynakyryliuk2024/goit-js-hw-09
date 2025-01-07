@@ -6,6 +6,29 @@ let formData = {
 const feedbackForm = document.querySelector('.feedback-form');
 console.dir(feedbackForm);
 
+const load = key => {
+try {
+    const dataFromLS = localStorage.getItem(key);
+
+    return dataFromLS === null ? undefined : JSON.parse(dataFromLS);
+
+    for (const key in dataFromLS) {
+        feedbackForm.elements[key].value = dataFromLS[key];
+    }
+
+} catch (err) {
+    console.log(err);
+}
+
+}
+
+const getFormFromLS = () => {
+   
+    console.log(load('feedback-form-state'));
+}
+
+getFormFromLS();
+
 feedbackForm.addEventListener('input', () => {
    
     formData.email = feedbackForm.elements.email.value.trim();
@@ -31,25 +54,6 @@ console.log(saveToLS('feedback-form-state', formData));
 
 
 
-const load = key => {
-try {
-    const dataFromLS = localStorage.getItem(key);
-
-    return dataFromLS === null ? undefined : JSON.parse(dataFromLS);
-} catch (err) {
-    console.log(err);
-}
-
-}
-
-const getFormFromLS = () => {
-   
-    console.log(load('feedback-form-state'));
-}
-
-getFormFromLS();
-
-
  feedbackForm.addEventListener ('submit', event => {
     event.preventDefault();
 
@@ -57,13 +61,6 @@ getFormFromLS();
         return alert('Fill please all fields');
      }
      
-    else {
-
-   formData.email = feedbackForm.elements.email.value.trim();
-   formData.message = feedbackForm.elements.message.value.trim();
-
-    console.log(formData);
-     } 
      
      feedbackForm.reset();
      localStorage.removeItem('feedback-form-state');
