@@ -27,22 +27,24 @@ try {
 
 }
 
+const load = key => {
+try {
+    const dataFromLS = localStorage.getItem(key);
+    return dataFromLS === null ? undefined : JSON.parse(dataFromLS);
+} catch (err) {
+    console.log(err);
+}
+
+}
+
 saveToLS('feedback-form-state', formData);
 
-//const getFormFromLS () => {
-    //try {
-       // const formFromLS = JSON.parse(localStorage.getItem('feedback-form-state'));
-        
-       // if (formFromLS === null) {
-       //     return
-//}
-//
-        //formData = formFromLS;
-        //console.log(formData);
 
-  //  } catch (err) {
-     //   console.log(err);
-  //  }
-//}
 
-//getFormFromLS();
+const getFormFromLS = () => {
+   
+    console.log(load('feedback-form-state'));
+
+}
+
+getFormFromLS();
