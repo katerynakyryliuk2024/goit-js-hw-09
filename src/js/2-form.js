@@ -27,7 +27,7 @@ try {
 
 }
 
-saveToLS('feedback-form-state', formData);
+console.log(saveToLS('feedback-form-state', formData)); 
 
 const load = key => {
 try {
@@ -45,12 +45,23 @@ const getFormFromLS = () => {
     console.log(load('feedback-form-state'));
 }
 
-getFormFromLS();
+console.log(getFormFromLS());
+
 
  feedbackForm.addEventListener ('submit', event => {
     event.preventDefault();
 
     if (feedbackForm.elements.email.value === '' || feedbackForm.elements.message.value === '') {
         return alert('Fill please all fields');
-    }
+     }
+     
+    else {
+
+   formData.email = feedbackForm.elements.email.value.trim();
+   formData.message = feedbackForm.elements.message.value.trim();
+
+    console.log(formData);
+     } 
+     
+    
 })
