@@ -47,7 +47,7 @@ const getFormFromLS = () => {
 
 getFormFromLS();
 
-const feedbackForm.addEventListener ('submit', event => {
+ feedbackForm.addEventListener ('submit', event => {
     event.preventDefault();
 
     if (feedbackForm.elements.email.value === '' || feedbackForm.elements.message.value === '') {
