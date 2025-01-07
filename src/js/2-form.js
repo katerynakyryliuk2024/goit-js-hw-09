@@ -27,6 +27,8 @@ try {
 
 }
 
+saveToLS('feedback-form-state', formData);
+
 const load = key => {
 try {
     const dataFromLS = localStorage.getItem(key);
@@ -37,14 +39,10 @@ try {
 
 }
 
-saveToLS('feedback-form-state', formData);
-
-
 
 const getFormFromLS = () => {
    
     console.log(load('feedback-form-state'));
-
 }
 
 getFormFromLS();
