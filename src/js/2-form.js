@@ -49,12 +49,19 @@ feedbackForm.addEventListener('input', formFildChange);
      }
      
      
+
+     console.log(formData = {
+         
+         email: feedbackForm.elements.email.value,
+         message: feedbackForm.elements.message.value,
+    
+});
+
+
      event.currentTarget.reset();
 
-    formData = {
-    email: "",
-    message: ""
-     }
+
+  
      
      localStorage.removeItem('feedback-form-state');
 
